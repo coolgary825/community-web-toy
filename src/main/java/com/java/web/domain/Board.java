@@ -36,16 +36,29 @@ public class Board implements Serializable {
     @Column
     private LocalDateTime updated;
 
+    @OneToOne (fetch = FetchType.LAZY)
+    private User user;
+
+
     public Board() {
     }
 
-    public Board(String title, String subTitle, String content, BoardType boardType, LocalDateTime created, LocalDateTime updated) {
+    public Board(String title, String subTitle, String content, BoardType boardType, LocalDateTime created, LocalDateTime updated, User user) {
         this.title = title;
         this.subTitle = subTitle;
         this.content = content;
         this.boardType = boardType;
         this.created = created;
         this.updated = updated;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Long getPk() {

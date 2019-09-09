@@ -29,12 +29,11 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String name, String password, String email, LocalDateTime created, LocalDateTime updated) {
+    public User(String name, String password, String email, LocalDateTime created) {
         this.name = name;
         this.password = password;
         this.email = email;
         this.created = created;
-        this.updated = updated;
     }
 
     public Long getPk() {
